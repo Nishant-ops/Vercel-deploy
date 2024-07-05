@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 
 app.use("/callback/api", (req, res) => {
-  console.log(req.params);
+  console.log(req);
 
   res.redirect("https://brandcollab.app");
 });
