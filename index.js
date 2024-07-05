@@ -5,7 +5,7 @@ const app = express();
 app.use(cors());
 
 app.use("/callback/api", (req, res) => {
-  console.log(req.originalUrl);
+  console.log(req.query.codea);
   console.log(req.baseUrl);
   console.log(req.url.includes("code"));
 
