@@ -17,7 +17,7 @@ app.use("/callback/api/", (req, res) => {
   const expiresIn = params.get("expires_in");
   console.log(accessToken, dataAccessExpirationTime, expiresIn);
 
-  return res.redirect("https://brandcollab.app");
+  return res.json({ a: "func" });
 });
 app.use("/", express.static(path.join(__dirname, "public")));
 app.listen(3000, () => {
