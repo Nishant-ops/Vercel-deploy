@@ -7,7 +7,7 @@ app.use(cors());
 app.use("/callback/api", (req, res) => {
   console.log(req.originalUrl);
   console.log(req.baseUrl);
-  console.log(req.url.includes("access_token"));
+  console.log(req.url.includes("code"));
 
   return res.redirect("https://brandcollab.app");
 });
