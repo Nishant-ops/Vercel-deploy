@@ -5,9 +5,8 @@ const app = express();
 app.use(cors());
 
 app.use("/callback/api", (req, res) => {
-  console.log(req.query);
-  const hash = req.query.split("#")[1];
-  console.log(hash);
+  console.log(window.location);
+  const hash = req.url.split("#")[1];
 
   // Split the hash into key-value pairs
   const params = new URLSearchParams(hash);
