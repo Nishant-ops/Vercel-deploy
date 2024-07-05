@@ -5,6 +5,7 @@ const app = express();
 app.use(cors());
 
 app.use("/callback/api", (req, res) => {
+  console.log(req);
   const hash = req.url.split("#")[1];
 
   // Split the hash into key-value pairs
