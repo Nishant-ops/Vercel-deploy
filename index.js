@@ -8,7 +8,7 @@ app.use("/callback/api", (req, res) => {
   console.log(req.query);
   console.log(req.url);
 
-  res.redirect("https://brandcollab.app");
+  return res.redirect("https://brandcollab.app");
 });
 app.use("/", express.static(path.join(__dirname, "public")));
 app.listen(3000, () => {
