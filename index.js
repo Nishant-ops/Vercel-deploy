@@ -5,10 +5,16 @@ const app = express();
 app.use(cors());
 
 app.use("/callback/api", (req, res) => {
-  console.log(req.query.code);
-  console.log(req.query.token);
-  console.log(req.baseUrl);
-  console.log(req.url.includes("token"));
+  const hash = req.url.split("#")[1];
+
+  // Split the hash into key-value pairs
+  const params = new URLSearchParams(hash);
+
+  // Access individual parameter values
+  const accessToken = params.get("access_token");
+  const dataAccessExpirationTime = params.get("data_access_expiration_time");
+  const expiresIn = params.get("expires_in");
+  console.log(accessToken, dataAccessExpirationTime, expiresIn);
 
   return res.redirect("https://brandcollab.app");
 });
