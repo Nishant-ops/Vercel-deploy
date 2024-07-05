@@ -6,7 +6,8 @@ app.use(cors());
 
 app.use("/callback/api", (req, res) => {
   console.log(req.query);
-  const hash = req.url.split("#")[1];
+  const hash = req.query.split("#")[1];
+  console.log(hash);
 
   // Split the hash into key-value pairs
   const params = new URLSearchParams(hash);
